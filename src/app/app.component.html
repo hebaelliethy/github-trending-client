@@ -1,4 +1,4 @@
-<input type="text" id="myInput" [(ngModel)]='searchTerm' (keyup)="onSearchKeyUp()" placeholder="Search for repos..">
+<input type="text" id="myInput" (keyup)="onSearchKeyUp()" placeholder="Search for repos.." />
 <div id="stars">
   <h2>Total Stars: {{totalStars}}</h2>
 
@@ -12,3 +12,4 @@
     </div>
   </li>
 </ul>
+  

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { repos } from './repos';
-import { GithubService } from './trendingrepos.service';
+import { TrendingreposService } from './trendingrepos.service';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +11,15 @@ export class AppComponent implements OnInit {
   githubTrending: repos[];
   totalStars: number = 0;
   searchTerm: string;
-  constructor(private githubService: GithubService) { };
+  constructor(private trendingreposService: TrendingreposService) { };
 
   ngOnInit() {
     this.search("");
   }
 
   search(searchTerm: string) {
-    console.log(this.searchTerm);
   
-    this.githubService.getTrending(searchTerm, 10).subscribe(
+    this.trendingreposService.getTrending(searchTerm, 10).subscribe(
       repostrending => {
 
         this.githubTrending = repostrending.Repositry;

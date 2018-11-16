@@ -8,7 +8,7 @@ import { reposResult } from './repos';
 @Injectable({
   providedIn: 'root'
 })
-export class GithubService {
+export class TrendingreposService {
 
   constructor(private http:HttpClient) { }
 
