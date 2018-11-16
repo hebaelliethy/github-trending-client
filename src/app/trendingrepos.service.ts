@@ -13,9 +13,8 @@ export class GithubService {
   constructor(private http:HttpClient) { }
 
    getTrending(filterName:string,limit=10):Observable<reposResult>{
-    const githubUrl= 'http://localhost:3100';
+    const githubUrl= 'http://localhost:3100/trending/?searchterm=${filterName}&limit=${limit}';
     return this.http.get<reposResult>(githubUrl)
   };
 
-  
 }
